@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import getGallery from "./gallery-get.js";
+import getGallery from "../gallery-get";
+import './Details.css';
 
 
 
@@ -24,12 +25,20 @@ export default class Details extends Component {
     if (this.state.Tvshow === undefined) {
       return <Redirect to='/not-found' />;
     } else {
-        return (
-          <div>
-             <h1>{this.state.Tvshow.name}</h1>
-             <Link to='/'>Back to home page</Link>
+      return (
+        <div className='Details'>
+          <h1>{this.state.Tvshow.name}</h1>
+          <div className='content'>
+           <div className='text'>
+             <div>{this.state.Tvshow.details}</div>
+            </div>
+            <img className='image'
+              src={this.state.Tvshow.logo}
+              alt={this.state.Tvshow.name} />
           </div>
-        );
-      }
+          <Link to='/'>Back to home page</Link>
+        </div>
+      );
     }
   }
+}
