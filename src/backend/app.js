@@ -9,5 +9,5 @@ app.get('/rest/shows', (req, res) => {
 // app.get('/' ,(req, res) => res.send('HOLA'))
 
 app.listen(port, function () {
-  console.log('Example app listening on port 3000!');
+  console.log('Example app listening on port 3001!');
 });
